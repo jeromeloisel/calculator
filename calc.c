@@ -79,7 +79,7 @@ int main(){
 		
 		for (i = 0 ; i < NB_FUNCS ; i++) {
 			if (functions[i].key == cmd[0]) {
-				printf("Call %s\n", functions[i].name);
+				printf("Calling command: %s\n", functions[i].name);
 				functions[i].compute();
 				break;
 			}
