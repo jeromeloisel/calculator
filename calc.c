@@ -39,6 +39,22 @@ int multiply() {
 	printf("Result is %d\n", res);
 }
 
+int fact()
+{
+	int i;
+	int res = 1;
+	char cmd[20];
+	
+	printf("Enter number to have its factoriel\n");
+	if ( fgets(cmd, 20, stdin) && cmd[0] != '\n' ) {
+		if (atoi(cmd) != 1) {
+			for (i=1; i < atoi(cmd) + 1; i++) {
+			res = res*i;
+		}
+		}
+		printf("Result is %d\n", res);
+	}
+}
 
 int quit() {
 	printf("Good Bye\n");
@@ -65,6 +81,11 @@ struct calc_func functions[] = {
 		.key = '*',
 		.compute = multiply,
 		.name = "multiplication",
+	},
+	{
+		.key = 'F',
+		.compute = fact,
+		.name = "factorial",
 	}
 
 };
